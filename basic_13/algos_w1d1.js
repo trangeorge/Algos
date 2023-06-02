@@ -43,14 +43,12 @@ function printOdd1to255() {
         if (i % 2 != 0) {
             console.log(i)
         }
-
     }
-
 }
-// 3. printOdd1to255()
+printOdd1to255()
 
 
-//Print ints and sum 0-255
+// 3. Print ints and sum 0-255
 
 
 
