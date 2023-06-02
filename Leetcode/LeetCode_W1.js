@@ -47,5 +47,23 @@ function countOdds(low, high) {
     return counter
 }
 
-var result = countOdds(4, 9)
-console.log(result)
+// var result = countOdds(4, 9)
+// console.log(result)
+
+// 1800 Maximum Ascending Subarray Sum
+
+function maxAscendingSum(arrs) {
+    var sum = arrs[0];
+    var temp = arrs[0];
+    for (i = 1; i < arrs.length; i++) {
+        if (arrs[i] > arrs[i - 1]) {
+            temp += arrs[i];
+        } else {
+            temp = arrs[i];
+        }
+        sum = Math.max(sum, temp)
+    }
+    return sum
+}
+
+console.log(maxAscendingSum([10, 20, 30, 5, 10, 50]))
