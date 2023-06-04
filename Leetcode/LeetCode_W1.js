@@ -139,12 +139,10 @@ var search = function (nums, target) {
     for (let i = 0; i < nums.length; i++) {
         if (nums[i] < target) {
             index++
-        } else if (nums[i] == target) {
-            return index
-        } else {
-            return -1
-        }
+        } else return index
     }
+    return -1
 }
 
 console.log(search([-1, 0, 3, 5, 9, 12], 9))
+console.log(search([-1, 0, 3, 5, 9, 12], 13))
