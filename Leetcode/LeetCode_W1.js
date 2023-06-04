@@ -112,3 +112,39 @@ var uniqueOccurrences = function (arr) {
 
 console.log(uniqueOccurrences([1, 2, 2, 1, 1, 3]))
 console.log(uniqueOccurrences([-3, 0, 1, -3, 1, 1, 1, -3, 10, 0]))
+
+// 905. Sort Array By Parity
+
+var sortArrayByParity = function (arr) {
+    var sorted = []
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 != 0) {
+            sorted.push(arr[i])
+        } else {
+            sorted.unshift(arr[i])
+        }
+    } return sorted
+}
+
+console.log(sortArrayByParity([4, 2, 2, 4]))
+console.log(sortArrayByParity([3, 1, 2, 4]))
+console.log(sortArrayByParity([0]))
+
+//704. Binary Search
+
+var search = function (nums, target) {
+    var index = 0;
+
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] < target) {
+            index++
+        } else if (nums[i] == target) {
+            return index
+        } else {
+            return -1
+        }
+    }
+}
+
+console.log(search([-1, 0, 3, 5, 9, 12], 9))
