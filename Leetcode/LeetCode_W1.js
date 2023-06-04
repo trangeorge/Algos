@@ -66,4 +66,49 @@ function maxAscendingSum(arrs) {
     return sum
 }
 
-console.log(maxAscendingSum([10, 20, 30, 5, 10, 50]))
+// console.log(maxAscendingSum([10, 20, 30, 5, 10, 50]))
+
+// 1323. Maximum 69 Number 
+
+
+
+function maximum69Number(num) {
+    var numstring = num.toString().replace("6", "9")
+    return parseInt(numstring)
+}
+console.log(maximum69Number(99669))
+
+
+
+var maximum69Number2 = function (num) {
+    return Number(String(num).replace(6, 9));
+};
+
+console.log(maximum69Number2(6696))
+
+
+// 1207. Unique Number of Occurrences
+
+var uniqueOccurrences = function (arr) {
+    var count = {}
+
+    for (let i = 0; i < arr.length; i++) {
+        if (count[arr[i]]) {
+            count[arr[i]]++
+        } else {
+            count[arr[i]] = 1
+        }
+    }
+
+    const countValues = Object.values(count)
+
+    for (let i = 0; i < countValues.length - 1; i++) {
+        if (countValues[i] === countValues[i + 1]) return false;
+    } return true;
+
+}
+
+
+
+console.log(uniqueOccurrences([1, 2, 2, 1, 1, 3]))
+console.log(uniqueOccurrences([-3, 0, 1, -3, 1, 1, 1, -3, 10, 0]))
