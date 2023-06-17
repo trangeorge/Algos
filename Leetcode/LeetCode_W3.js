@@ -109,3 +109,38 @@ console.log(isPowerOfFour(16))
 console.log(isPowerOfFour(5))
 console.log(isPowerOfFour(1))
 console.log(isPowerOfFour(19))
+
+
+// 1979 Find Greatest Common Divisor of Array
+
+var findGCD = function (nums) {
+    var newNum = [Math.min(...nums), Math.max(...nums)]
+    var firstNum = newNum[0]
+    var secondNum = newNum[1]
+
+    while (secondNum) {
+        let newNum = secondNum;
+        secondNum = firstNum % secondNum;
+        firstNum = newNum;
+    }
+    return firstNum;
+}
+
+console.log(findGCD([2, 5, 6, 9, 10]))
+console.log(findGCD([7, 5, 6, 8, 3]))
+console.log(findGCD([3, 3]))
+
+
+// 1876 Substrings of Size Three with Distinct Characters
+
+var countGoodSubstrings = function (s) {
+    var result = 0;
+
+    for (let i = 1; i < s.length - 1; i++)
+        if (s[i] != s[i - 1] && s[i] != s[i + 1] && s[i - 1] != s[i + 1])
+            result++;
+    return result;
+}
+
+console.log(countGoodSubstrings("xyzzaz"))
+console.log(countGoodSubstrings("aababcabc"))
