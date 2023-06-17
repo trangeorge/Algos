@@ -68,3 +68,44 @@ var maxPower2 = function (s) {
 
 console.log(maxPower2("leetcode"))
 console.log(maxPower2("leeeeetcodeee"))
+
+
+// 344 Reverse String
+
+var reverseString = function (s) {
+    var left = 0;
+    var right = s.length - 1;
+
+    while (left <= right) {
+        [s[left], s[right]] = [s[right], s[left]]
+        left++
+        right--
+    }
+    return s
+}
+
+console.log(reverseString(["h", "e", "l", "l", "o"]))
+console.log(reverseString(["h", "e", "l"]))
+
+
+
+// 342 Power of Four
+
+var isPowerOfFour = function (n) {
+    if (n < 1) return false
+
+    for (let i = 0; i <= n; i++) {
+        let num = Math.pow(4, i)
+        if (num === n) {
+            return true
+        }
+        if (num > n) {
+            return false
+        }
+    }
+}
+
+console.log(isPowerOfFour(16))
+console.log(isPowerOfFour(5))
+console.log(isPowerOfFour(1))
+console.log(isPowerOfFour(19))
