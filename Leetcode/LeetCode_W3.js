@@ -144,3 +144,33 @@ var countGoodSubstrings = function (s) {
 
 console.log(countGoodSubstrings("xyzzaz"))
 console.log(countGoodSubstrings("aababcabc"))
+
+// 1431 Kids with the Greatest Number of Candies
+
+var kidsWithCandies = function (candies, extraCandies) {
+    var maxCandies = Math.max(...candies);
+    var result = [];
+
+    for (let i = 0; i < candies.length; i++) {
+        if (candies[i] + extraCandies >= maxCandies) {
+            result.push(true);
+        } else {
+            result.push(false);
+        }
+    }
+    return result
+}
+
+console.log(kidsWithCandies([2, 3, 5, 1, 3], 3))
+console.log(kidsWithCandies([4, 2, 1, 1, 2], 1))
+console.log(kidsWithCandies([12, 1, 12], 10))
+
+// 504 Base 7
+
+var convertToBase7 = function (num) {
+    return num.toString(7);
+}
+
+
+console.log(convertToBase7(100))
+console.log(convertToBase7(-7))
