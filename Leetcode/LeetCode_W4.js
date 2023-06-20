@@ -9,3 +9,18 @@ var maximumPopulation = function (logs) {
 }
 
 console.log(maximumPopulation([[1993, 1999], [2000, 2010]]))
+
+// 1455 Check if a word occurs as a prefix of any word in a sentence 
+
+var isPrefixOfWord = function (sentence, searchWord) {
+    sentence = sentence.split(' ');
+
+    for (let i = 0; i < sentence.length; i++) {
+        if (!sentence[i].indexOf(searchWord)) {
+            return i + 1
+        }
+    }
+    return -1;
+}
+
+console.log(isPrefixOfWord('i love eating burger', 'burg'))
