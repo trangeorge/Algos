@@ -24,3 +24,25 @@ var isPrefixOfWord = function (sentence, searchWord) {
 }
 
 console.log(isPrefixOfWord('i love eating burger', 'burg'))
+
+
+// 2042 Check if Numbers are Ascending in a Sentence
+
+
+var areNumbersAscending = function (s) {
+    var tokens = s.split(" ")
+    var prevNumber = -1
+
+    for (let i = 0; i < s.length; i++) {
+        if (!isNaN(tokens[i])) {
+            let currentNumber = parseInt(tokens[i])
+            if (currentNumber <= prevNumber) return false
+            prevNumber = currentNumber
+        }
+    }
+    return true
+};
+
+console.log(areNumbersAscending("1 box has 3 blue 4 red 6 green and 12 yellow marbles"))
+console.log(areNumbersAscending("hello world 5 x 5"))
+console.log(areNumbersAscending("4 5 11 26"))
