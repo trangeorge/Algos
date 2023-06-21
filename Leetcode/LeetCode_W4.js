@@ -46,3 +46,40 @@ var areNumbersAscending = function (s) {
 console.log(areNumbersAscending("1 box has 3 blue 4 red 6 green and 12 yellow marbles"))
 console.log(areNumbersAscending("hello world 5 x 5"))
 console.log(areNumbersAscending("4 5 11 26"))
+
+
+//724. Find Pivot Index
+
+
+var pivotIndex = function (nums) {
+    let ls = 0, rs = nums.reduce((a, b) => a + b) - nums[0];
+
+    if (ls === rs) return 0;
+
+    for (let i = 1; i < nums.length; i++) {
+        ls += nums[i - 1];
+        rs -= nums[i];
+        if (ls === rs) return i;
+    }
+    return -1;
+};
+
+console.log(pivotIndex([1, 7, 3, 6, 5, 6]))
+console.log(pivotIndex([2, 1, -1]))
+console.log(pivotIndex([1, 2, 3]))
+
+// 1304 Find N Unique Intergers Sum up to Zero
+
+var sumZero = function (n) {
+    var result = [];
+
+    for (let i = 1; i <= n / 2; i++) {
+        result.push(i, -i);
+    }
+    if (n % 2) result.push(0);
+    return result
+};
+
+console.log(sumZero(5))
+console.log(sumZero(3))
+console.log(sumZero(1))
