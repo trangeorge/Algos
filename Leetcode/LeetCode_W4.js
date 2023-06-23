@@ -83,3 +83,29 @@ var sumZero = function (n) {
 console.log(sumZero(5))
 console.log(sumZero(3))
 console.log(sumZero(1))
+
+// 922 Sory Array By Partiy 2
+
+var sortArrayByParityII = function (nums) {
+    let result = [];
+    nums = nums.sort()
+
+
+    let odd = [];
+    let even = [];
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] % 2 === 0) odd.push(nums[i]);
+        else {
+            even.push(nums[i])
+        }
+    }
+    for (let i = 0; i < nums.length; i++) {
+        if (i % 2 === 0)
+            result.push(odd.pop())
+        else result.push(even.pop())
+    }
+    return result
+};
+
+console.log(sortArrayByParityII([4, 2, 5, 7]))
+console.log(sortArrayByParityII([2, 3]))
