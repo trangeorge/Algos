@@ -109,3 +109,35 @@ var sortArrayByParityII = function (nums) {
 
 console.log(sortArrayByParityII([4, 2, 5, 7]))
 console.log(sortArrayByParityII([2, 3]))
+
+
+// 766 Toeplitz Matrix
+
+var isToeplitzMatrix = function (matrix) {
+    for (let i = 0; i < matrix.length - 1; i++) {
+        for (let j = 0; j < matrix[i].length - 1; j++) {
+            if (matrix[i][j] !== matrix[i + 1][j + 1]) {
+                return false
+            }
+        }
+    }
+    return true
+};
+
+console.log(isToeplitzMatrix([[1, 2, 3, 4], [5, 1, 2, 3], [9, 5, 1, 2]]))
+
+var findNonMinOrMax = function (nums) {
+    const max = Math.max(...nums);
+    const min = Math.min(...nums);
+
+    for (let i = 0; i < nums.length; i++) {
+        if (max > nums[i] && nums[i] > min) {
+            return nums[i];
+        }
+    }
+    return -1;
+};
+
+console.log(findNonMinOrMax([3, 2, 1, 4]))
+console.log(findNonMinOrMax([1, 2]))
+console.log(findNonMinOrMax([2, 1, 3]))
