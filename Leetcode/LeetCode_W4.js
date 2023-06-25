@@ -157,3 +157,27 @@ var smallestEqual = function (nums) {
 console.log(smallestEqual([0, 1, 2]))
 console.log(smallestEqual([4, 3, 2, 1]))
 console.log(smallestEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
+
+// 1351 Count Negative Numbers in a Sorted Matrix
+
+var countNegatives = function (grid) {
+    var count = 0
+    const cols = grid[0].length
+
+    for (const row of grid) {
+        let left = 0
+        let right = cols - 1
+        while (left <= right) {
+            const mid = Math.floor(left + (right - left) / 2)
+            if (row[mid] < 0) {
+                count += right - mid + 1
+                right = mid - 1
+            } else {
+                left = mid + 1
+            }
+        }
+    }
+    return count
+};
+
+console.log(countNegatives([[4, 3, 2, -1], [3, 2, 1, -1], [1, 1, -1, -2], [-1, -1, -2, -3]]))
