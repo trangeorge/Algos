@@ -86,3 +86,40 @@ var detectCapitalUse = function (word) {
 
 console.log(detectCapitalUse("USA"))
 console.log(detectCapitalUse("FLaG"))
+
+//169 Majority Element
+
+var majorityElement = function (nums) {
+    let count = 0;
+    let result = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if (count == 0)
+            result = nums[i];
+        if (nums[i] === result) count++
+        else count--;
+    }
+    return result;
+};
+
+console.log(majorityElement([3, 2, 3]))
+console.log(majorityElement([2, 2, 1, 1, 1, 2, 2]))
+
+//392 Is Subsequence
+
+const isSubsequence = (s, t) => {
+    if (s.length > t.length) return false;
+
+    const t_length = t.length;
+    let subsequence = 0;
+    for (let i = 0; i < t_length; i++) {
+        if (s[subsequence] === t[i]) {
+
+            subsequence++;
+        }
+    }
+    if (subsequence === s.length) {
+        return true
+    } else {
+        return false
+    }
+};
