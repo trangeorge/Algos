@@ -123,3 +123,26 @@ const isSubsequence = (s, t) => {
         return false
     }
 };
+
+// 2475 Number of Unequal Triplets in Array
+
+var unequalTriplets = function (nums) {
+    let ans = 0
+    let seen = {}
+
+    for (let i = 0; i < nums.length; i++) {
+        if (seen.hasOwnProperty(nums[i])) {
+            continue
+        }
+
+        for (let j = i + 1; j < nums.length; j++) {
+            for (let k = j + 1; k < nums.length; k++) {
+                if (nums[i] !== nums[j] && nums[j] !== nums[k] && nums[i] !== nums[k]) {
+                    ans++
+                }
+            }
+        }
+
+    }
+    return ans
+};
