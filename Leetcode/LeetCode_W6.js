@@ -51,6 +51,13 @@ var mergeTwoLists = function (l1, l2) {
     }
 };
 
+//58 Length of the Last Word
+
+var lengthOfLastWord = function (s) {
+    let result = s.trim().split(' ');
+    return result[result.length - 1].length
+};
+
 // 66 Plus One
 
 var plusOne = function (arr) {
