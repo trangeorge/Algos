@@ -97,3 +97,26 @@ var climbStairs = function (n) {
 
 console.log(climbStairs(2))
 console.log(climbStairs(3))
+
+//83 Remove Dupllicates from Sorted List
+
+var deleteDuplicates = function (head) {
+    //empty list
+    if (head == null)
+        return null;
+
+    let curr = head;
+    while (curr.next != null) {
+        if (curr.val == curr.next.val) {
+            let next_next = curr.next.next;
+            let nodeToDelete = curr.next;
+            delete (nodeToDelete);
+            curr.next = next_next;
+        }
+        else//not equal
+        {
+            curr = curr.next;
+        }
+    }
+    return head;
+};
