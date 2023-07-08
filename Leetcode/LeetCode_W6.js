@@ -120,3 +120,47 @@ var deleteDuplicates = function (head) {
     }
     return head;
 };
+
+// 136 Single Number
+
+var singleNumber = function (nums) {
+    var sorted = nums.sort()
+    console.log(sorted)
+    for (let i = 0; i < sorted.length; i += 2) {
+        if (sorted[i] === sorted[i + 1]) {
+            continue;
+        } else {
+            return sorted[i]
+        }
+    }
+};
+
+console.log(singleNumber([2, 2, 1]))
+console.log(singleNumber([4, 1, 2, 1, 2]))
+console.log(singleNumber([1]))
+
+// 268 Missing Number
+
+var missingNumber = function (nums) {
+    var sorted = nums.sort((a, b) => a - b);
+    console.log(sorted)
+
+    if (sorted[0] !== 0) {
+        return 0
+    }
+
+    for (let i = 0; i < sorted.length; i++) {
+        // hey yo, if you, if this number plus one is equal to the next number, then continue
+        if (sorted[i] + 1 == sorted[i + 1]) {
+            continue;
+        } else {
+            // if it's not equal, then return the missing number
+            return sorted[i] + 1
+        }
+    }
+};
+
+console.log(missingNumber([1]))
+console.log(missingNumber([3, 0, 1]))
+console.log(missingNumber([0, 1]))
+console.log(missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1]))
