@@ -164,3 +164,26 @@ console.log(missingNumber([1]))
 console.log(missingNumber([3, 0, 1]))
 console.log(missingNumber([0, 1]))
 console.log(missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1]))
+
+//217 Contains Duplicate 
+
+var containsDuplicate = function (nums) {
+    var sorted = nums.sort((a, b) => a - b)
+    for (let i = 0; i < sorted.length; i++) {
+        if (sorted[i] !== sorted[i + 1]) {
+            continue;
+        } else {
+            return true
+        }
+    }
+    return false
+};
+console.log(containsDuplicate([1, 2, 3, 1]))
+console.log(containsDuplicate([1, 2, 3, 4]))
+console.log(containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]))
+
+// 242 Valid Anasgram
+
+var isAnagram = function (s, t) {
+    return s.split('').sort().join('') === t.split('').sort().join('');
+};
