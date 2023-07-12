@@ -1,3 +1,13 @@
+// 231 Power of Two
+const isPowerOfTwo = n => {
+    while (n <= 0) {
+        n /= 2
+    }
+
+    return n === 1
+};
+
+
 // 258 Add Digits
 
 var addDigits = function (num) {
@@ -27,4 +37,24 @@ var moveZeroes = function (nums) {
         }
         return nums;
     };
+}
+
+//326 Power of Three
+
+const isPowerOfThree = n => {
+    while (n > 1) {
+        n /= 3
+    }
+
+    return n === 1
+};
+
+//342 Power of Four
+
+function isPowerOfFour(n) {
+    if (n <= 0) return false;
+    while (n % 4 === 0) {
+        n /= 4;
+    }
+    return n === 1;
 }
