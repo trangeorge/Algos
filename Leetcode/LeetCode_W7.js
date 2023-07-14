@@ -99,3 +99,43 @@ var reverseVowels = function (s) {
     }
     return arr.join("")
 };
+
+// 383 Ransom Note
+
+var canConstruct = function (ransomNote, magazine) {
+    ransomNote = ransomNote.split('').sort().join('')
+    magazine = magazine.split('').sort().join('')
+    // edge case 
+    if (ransomNote.length > magazine.length) {
+        return false
+    }
+
+    let subsequence = 0;
+    for (let i = 0; i < magazine.length; i++) {
+        if (ransomNote[subsequence] === magazine[i]) {
+            // ! if it is matching, increment subsequence
+            subsequence++;
+        }
+    }
+    if (subsequence === ransomNote.length) {
+        return true
+    } else {
+        return false
+    }
+};
+console.log(canConstruct("a", "b"))
+console.log(canConstruct("aa", "ab"))
+console.log(canConstruct("aa", "aab"))
+console.log(canConstruct("aab", "baa"))
+
+//448 Find All Numbers Disappeared in an Array
+
+var findDisappearedNumbers = function (nums) {
+    let output = []
+    for (let i = 1; i <= nums.length; i++) {
+        if (nums.indexOf(i) < 0) {
+            output.push(i)
+        }
+    }
+    return output
+};
