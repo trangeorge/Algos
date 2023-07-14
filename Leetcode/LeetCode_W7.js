@@ -139,3 +139,63 @@ var findDisappearedNumbers = function (nums) {
     }
     return output
 };
+
+//485 Max Consecutive Ones 
+
+var findMaxConsecutiveOnes = function (nums) {
+    let max = 0;
+    let current = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] === 1) {
+            current += 1;
+        } else {
+            current = 0;
+        }
+
+        if (current > max) {
+            max = current;
+        }
+    }
+    return max;
+};
+
+console.log(findMaxConsecutiveOnes([1, 1, 0, 1, 1, 1]))
+
+// 496 Next Greater Element 1
+
+var nextGreaterElement = function (nums1, nums2) {
+    const ans = [];
+    for (let i = 0; i < nums1.length; i++) {
+        let max = -1;
+        for (let j = 0; j < nums2.length; j++) {
+            let index = j;
+            if (nums1[i] === nums2[j]) { // Found element in nums2 that matches current element in nums1
+                while (index !== nums2.length) { // Iterate through remaining elements in nums2 to find next greater element
+                    if (nums2[index] > nums1[i]) {
+                        max = nums2[index]; // Update max if we find a greater element
+                        break;
+                    }
+                    index++;
+                }
+            }
+        }
+        ans.push(max);
+    }
+    return ans;
+}
+
+var nextGreaterElement = function (nums1, nums2) {
+    let result = [];
+    for (let num of nums1) {
+        let flag = -1;
+        for (let i = nums2.indexOf(num) + 1; i < nums2.length; i++) {
+            if (nums2[i] > num) {
+                flag = nums2[i];
+                break;
+            }
+        }
+        result.push(flag);
+    }
+    return result;
+};
+
