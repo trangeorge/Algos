@@ -199,3 +199,10 @@ var nextGreaterElement = function (nums1, nums2) {
     return result;
 };
 
+// 521 Longest Uncommon Subsequence I
+
+var findLUSlength = function (a, b) {
+    if (a == b) return -1
+    if (a.length > b.length) return a.length
+    else return b.length
+};
