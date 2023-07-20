@@ -8,3 +8,23 @@ var lastStoneWeight = function (stones) {
     }
     return stones[0] //return the 0 index value ie the resultl
 };
+
+// 977 Squares of a Sorted Array 
+
+var sortedSquares = function (nums) {
+    let start = 0;
+    let end = nums.length - 1;
+    let idx = end;
+    let sortPowArr = [];
+
+    while (idx > -1) {
+        if (Math.abs(nums[start]) > Math.abs(nums[end])) {
+            sortPowArr[idx--] = nums[start] * nums[start];
+            start++;
+        } else {
+            sortPowArr[idx--] = nums[end] * nums[end];
+            end--;
+        }
+    }
+    return sortPowArr;
+};
