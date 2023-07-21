@@ -28,3 +28,23 @@ var sortedSquares = function (nums) {
     }
     return sortPowArr;
 };
+
+//922 Sort Array By Parity II
+
+var sortArrayByParityII = function (nums) {
+
+    let res = new Array(nums.length);
+    let e = 0, o = 1;
+
+    for (i = 0; i < nums.length; i++) {
+        if (nums[i] % 2 === 0) {
+            res[e] = nums[i];
+            e += 2
+        }
+        else {
+            res[o] = nums[i];
+            o += 2
+        }
+    }
+    return res;
+};
