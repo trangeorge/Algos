@@ -48,3 +48,23 @@ var sortArrayByParityII = function (nums) {
     }
     return res;
 };
+
+var selfDividingNumbers = function (left, right) {
+    const arr = [];
+    for (let i = left; i <= right; i++) {
+        let num = i;
+        let flag = true;
+        while (num > 0) {
+            let a = num % 10;
+            if (i % a !== 0) {
+                flag = false;
+                break;
+            }
+            num = Math.floor(num / 10);
+        }
+        if (flag)
+            arr.push(i);
+    }
+
+    return arr;
+};
