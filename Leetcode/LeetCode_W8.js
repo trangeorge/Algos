@@ -49,6 +49,9 @@ var sortArrayByParityII = function (nums) {
     return res;
 };
 
+// 728. Self Dividing Numbers
+
+
 var selfDividingNumbers = function (left, right) {
     const arr = [];
     for (let i = left; i <= right; i++) {
@@ -67,4 +70,24 @@ var selfDividingNumbers = function (left, right) {
     }
 
     return arr;
+};
+
+// 557 Reverse Words in a String III
+
+var reverseWords = function (s) {
+    let arr = s.split(' ')
+    let len = arr.length - 1
+
+    for (let i = 0; i <= len; i++) {
+        let chars = arr[i].split('')
+        let start = 0
+        let end = chars.length - 1
+        while (start <= end) {
+            let temp = chars[start]
+            chars[start++] = chars[end]
+            chars[end--] = temp
+        }
+        arr[i] = chars.join('')
+    }
+    return arr.join(' ')
 };
