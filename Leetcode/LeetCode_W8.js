@@ -91,3 +91,30 @@ var reverseWords = function (s) {
     }
     return arr.join(' ')
 };
+
+// 575 Distribute Candies
+
+var distributeCandies = function (candyType) {
+    // The Set will remove all of the duplicates from candyType
+    return Math.min(candyType.length / 2, new Set(candyType).size);
+};
+
+//594. Longest Harmonious Subsequence
+
+
+var findLHS = function (nums) {
+    let map = {};
+    let maxResultLength = 0;
+
+    for (let num of nums) {
+        map[num] = (map[num] || 0) + 1;
+    }
+
+    for (const [key, value] of Object.entries(map)) {
+        if (map[key - 1]) {
+            maxResultLength = Math.max(maxResultLength, map[key - 1] + value);
+        }
+    }
+
+    return maxResultLength;
+};
