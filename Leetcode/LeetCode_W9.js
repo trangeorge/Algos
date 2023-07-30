@@ -203,4 +203,4 @@ var dominantIndex = function (nums) {
 console.log(dominantIndex([3, 6, 1, 0]));
 console.log(dominantIndex([1, 2, 3, 4]));
 
-// 999 
+// 999 or something c:
